@@ -203,7 +203,68 @@ main
 
 
 
-/* Up Coming Match Style */
+/* Best Football Team Style */
+
+.container-header
+{
+    text-align: center;
+    margin-left: 50%;
+    transform:translate(-50%);
+    margin-bottom:10%;
+    font-size: 40px;
+    font-weight: bold;
+}
+.best-team
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.team
+{
+    position: relative;
+    margin: auto 20px;
+    box-shadow: 0px 5px 13px #0000003f;
+    border-radius:25px;
+}
 
 
+.team-flag
+{
+    width: 92%;
+}
 
+
+.team-flag img
+{
+    width: 100%;
+    margin: 4% 4% auto 4%;
+    display: inline-block;
+    border-radius:25px;
+}
+
+.team-details
+{
+    text-align:center;
+    width: 92%;
+    margin: 2% 4% 10% 4%;
+}
+
+.team-details p
+{
+    font-size: 16px;
+    line-height: 28px;
+    color: #6C6C6C;
+}
+
+.flag-button
+{
+    margin-left:50%;
+    transform: translate(-50%);
+    margin-bottom:5%;
+}
+
+.flag-button .fas
+{
+    margin-left: 10px;
+}
