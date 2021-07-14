@@ -30,8 +30,20 @@ main
     position:relative;
     margin: 50px auto;
 }
-
-
+.container-header
+{
+    text-align: center;
+    margin-left: 50%;
+    transform:translate(-50%);
+    margin-bottom:10%;
+    font-size: 30px;
+    font-weight: bold;
+}
+.button
+{
+    display: inline-block;
+    cursor: pointer;
+}
 .button a
 {
    text-decoration:none;
@@ -40,16 +52,22 @@ main
    display: inline-block;
    background-color:#E02C6D;
    padding: 10px 24px;
+   transition:1s;
+   cursor: pointer;
 }
 .button .fas
 {
     margin-right: 10px;
 }
 
+
+.button:hover a
+{
+    background-color: #18191F;
+}
 /* Header Style Start */
 .header
 {
-    width:100%;
     height: 677px;
     background-color: #2D25A0;
 }
@@ -57,13 +75,14 @@ main
 
 .nav-bar
 {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding:45px 150px;  
 }
 
-.nav-link ui li 
+.nav-link ul li 
 {
     list-style:none;
     padding:0 25px;
@@ -71,13 +90,40 @@ main
     position:relative;
 }
 
-.nav-link ui li a
+.nav-link ul li a
 {
     text-decoration:none;
     color:#fff;
     font-size:16px;
 }
+.nav-link ul li::after
+{
+    content:"";
+    width:0%;
+    height:2px;
+    background:#fff;
+    display:block;
+    transition:0.5s;
+    margin-left: 0;
+}
 
+.nav-link ul li:hover::after
+{
+    width:100%;
+}
+
+#taggle
+{
+    position: absolute;
+    display: none;
+}
+.nav-btn .fas
+{
+
+    opacity: 0;
+    font-size: 20px;
+    color: #fff;
+}
 .header-info
 {
     display: grid;
@@ -85,6 +131,10 @@ main
     grid-column-gap:100px;
     margin:0 165px;
 
+}
+.half-width
+{
+    width:92%;
 }
 
 
@@ -96,8 +146,7 @@ main
 
 .half-width img
 {
-    width: 550px;
-    height: 430px;
+    width:100%;
 }
 
 .half-width .button
@@ -109,7 +158,18 @@ main
     margin-left:10px;
 }
 
+.half-width .button:hover a
+{
+    background-color: #fff;
+    color: #2D25A0;
+    transform: translateX(50px);
+}
 
+.nav-bar .button:hover a
+{
+    background-color: #fff;
+    color: #2D25A0;
+}
 
 /* Player Section Start */
 
@@ -118,6 +178,8 @@ main
     display: grid;
     grid-template-columns:repeat(3, 1fr);
     grid-row-gap:30px;
+    margin: 25px auto;
+
 }
 
 .player
@@ -150,7 +212,7 @@ main
 .player-details h2
 {
     font-weight: bold;
-    font-size: 28px;
+    font-size: 20px;
     color: #18191F;
     margin-bottom: 10px;
 }
@@ -175,13 +237,22 @@ main
     align-items: center;
     margin: auto 20px;
 }
-
+.highlight-img 
+{
+    width: 92%;
+}
 .highlight-img img
 {
-    width: 400px;
-    height: 350px;
+    width: 100%;
+    margin: 4% 4% auto 4%;
+    display: inline-block;
 }
-
+.highlight-info
+{
+    width:92%;
+    margin: 4% 4% auto 4%;
+    display: inline-block;
+}
 .highlight-info h2
 {
     font-weight: bold;
@@ -205,15 +276,6 @@ main
 
 /* Best Football Team Style */
 
-.container-header
-{
-    text-align: center;
-    margin-left: 50%;
-    transform:translate(-50%);
-    margin-bottom:10%;
-    font-size: 40px;
-    font-weight: bold;
-}
 .best-team
 {
     display: grid;
@@ -238,6 +300,7 @@ main
 .team-flag img
 {
     width: 100%;
+    height: 250px;
     margin: 4% 4% auto 4%;
     display: inline-block;
     border-radius:25px;
@@ -303,8 +366,22 @@ main
 
 .social-col h1:hover
 {
-    color:darkorange;
     transform:scale(1.3) translateY(-10px);
+}
+
+.social-col:nth-child(1) h1:hover
+{
+    color:#E1306C;
+}
+
+.social-col:nth-child(2) h1:hover
+{
+    color:#ff0000 ;
+}
+
+.social-col:nth-child(3) h1:hover
+{
+    color:#4267B2;
 }
 
 .social-col
@@ -342,29 +419,188 @@ main
 
 .fotter-logo
 {
-    width:100%;
+    width:92%;
 }
 
-.fotter-logo img 
+.fotter-logo img
 {
-    width: 483.87px;
-    height: 110px;
+    width: 100%;
+    margin: 4% 4% auto 4%;
+    display: inline-block;
 }
-
+.fotter-icon
+{
+    display: inline-block;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
 .fotter-icon .fab
 {
     width: 20px;
-    height: 20;
+    height: 20px;
     font-size:20px;
     color: #414141;
     background-color:#bdbdbd;
     margin: 0 15px 20px;
     padding:15px;
-    border-radius: 50%;
+    border-radius: 50px;
+    transition:0.5s;
+    cursor: pointer;
 }
 
 .copyright
 {
     font-size: 25px;
     margin:10px 0;
+}
+
+.fotter-icon .fab:nth-child(1):hover
+{
+    color:#fff;
+    background-color: #4267B2;
+}
+
+.fotter-icon .fab:nth-child(2):hover
+{
+    color:#fff;
+    background-color: #E1306C;
+}
+
+.fotter-icon .fab:nth-child(3):hover
+{
+    color:#fff;
+    background-color: #1DA1F2;
+}
+
+.fotter-icon .fab:nth-child(4):hover
+{
+    color:#fff;
+    background-color: #ff0000;
+}
+
+
+
+
+/*------------------------------
+       Responsive Design  
+--------------------------------*/
+
+/* For Mobile */
+
+
+@media only screen and (max-width:688px)
+{
+
+    .container
+    {
+        width: 100%;
+    }
+
+    .header-info
+    {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap:50px;
+    margin:0px;
+    }
+
+    .half-width .header-info
+    { 
+        display: inline-block;
+        margin: 4% 4% auto 4%;
+    }
+    .header
+    {
+        height: 700px;
+        background-color: #2D25A0;
+    }
+
+    .half-width
+    {
+        margin:0 auto;
+        width:75%;
+    }
+    
+    .half-width h1  
+    {
+        font-size: 35px;
+    }
+
+    .nav-bar
+    {
+        padding:20px;
+    }
+   
+    .nav-link ul
+    {
+        width: 91%;
+        margin-top: 20px;
+        position: absolute;
+        display:block;
+        opacity: 0;
+        background-color: #2D25A0;
+        text-align: center;
+        margin-bottom: 15px;
+        transition: opacity 0.5s;
+        
+
+    }
+
+    .nav-link ul li
+    {
+        position: relative;
+        display:block;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        
+    }
+
+
+    .nav-btn .fas
+    {
+        opacity: 1;
+        display: inline-block;
+    }
+
+    #taggle:checked ~ .nav-link ul
+    {
+        display:block;
+        opacity: 1;
+    }
+
+    .players, .highlight, .best-team
+    {
+        position:relative;
+        grid-template-columns:repeat(1, 1fr);
+        grid-row-gap:30px;
+        margin:0 auto;
+    }
+
+    .social-row
+    {
+        flex-direction: column;
+        box-shadow:0px 0px 0px #fff;
+        border-radius: 20px;
+
+    }
+
+
+    .fotter-icon .fab
+    {   width: 10px;
+        height: 10px;
+        font-size:10px;
+        margin: 0 5px 20px;
+        padding:8px;
+    }
+
+    .copyright
+    {
+    font-size: 14px;
+    margin:10px 0;
+    }
+
+    
+
+    
+
 }
